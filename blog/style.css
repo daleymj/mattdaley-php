@@ -1,0 +1,89 @@
+html {
+  background-color: beige;
+  box-sizing: border-box;
+}
+html > * {
+  box-sizing: inherit;
+}
+body {
+  max-width: 1000px;
+  margin: 0 auto;
+  font-family: Calibri, Arial, sans-serif;
+  background: white;
+}
+header {
+  background-color: black;
+  padding: 1em;
+  margin: 0;
+}
+header h1 a {
+color: white;
+text-decoration: none;
+}
+header h1 a:hover {
+  color: skyblue;
+}
+main {
+  height: inherit;
+  background-color: steelblue;
+  padding: 1em;
+}
+main h2 a {
+  color: black;
+}
+main a{
+  color: orange;
+  text-decoration: none;
+}
+main a:hover {
+  color: goldenrod;
+}
+aside {
+  background-color: goldenrod;
+  padding: 1em;
+}
+aside li a {
+  color: #654321;
+  text-decoration: none;
+}
+aside li a:hover {
+  color: steelblue;
+}
+section.pagination {
+  padding: 1em;
+}
+section.pagination a {
+  background-color: goldenrod;
+  color: black;
+}
+footer {
+  background-color: black;
+  padding: 1em;
+}
+footer small {
+  color: white;
+  text-decoration: none;
+}
+
+/************************form controls*/
+input, textarea, label {
+  display: block;
+  width: 50%;
+  margin: .2em 0;
+}
+input.submit {
+  margin-top: 1em;
+}
+@media screen and (min-width: 500px) {
+  main {
+    width: 63%;
+    float: right;
+  }
+  aside {
+    width: 30%;
+    float: left;
+  }
+  footer {
+    clear: both;
+  }
+}

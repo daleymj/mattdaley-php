@@ -1,0 +1,34 @@
+App Idea:  Social Network for musicians.
+
+Proposed Features:
+Sign up/Log in
+*Upload Userpic
+*Decide what type of profile you want
+
+Promote Your band
+
+Submit your band to play at Major/Minor shows
+
+Build a crew
+
+Post auditions
+
+Search for other Members
+
+Plan Jam Sessions
+
+Add what instrument you play or want to play
+*
+Upload photos
+
+Other users can comment
+
+Add other users as friends
+
+Create Groups
+
+Research:
+
+Bandmix
+Down To Jam
+ReverbNation

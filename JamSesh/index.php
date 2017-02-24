@@ -30,23 +30,18 @@
       <label for="the_phone">Phone Number</label>
       <input type="tel" name="phone" id="the_phone" value="">
 
-      <label for="the_reason">How can I help you?</label>
-      <select name="reason" id="the_reason">
-
-      <option>Choose One</option>
-      <option value="help">I need help</option>
-      <option value="hi">
-      	I just want to say 'Hi!'</option>
-      <option value="bug">
-      	I found a bug in you code</option>
-
-      </select>
+      <label>
+        Musician
+        <input type="checkbox" name="Musician" value="true" class="account">
+        Band
+        <input type="checkbox" name="Band" value="true" class="account">
+        Fan
+        <input type="checkbox" name="Fan" value="true" class="account">
+      </label>
 
       <label>
-
-      <input type="checkbox" name="newsletter" value="true">
-      I agree to the Terms of Service and the Privacy Policy.
-
+        <input type="checkbox" name="terms" value="true" class="terms">
+        I agree to the Terms of Service and the Privacy Policy.
       </label>
 
       <input type="submit" value="Sign Up">

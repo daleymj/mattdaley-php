@@ -36,10 +36,14 @@ footer ul li a img {
 
 /************************form controls*/
 form {
-  width: 50%;
+  width: 30%;
   color: white;
 }
-form input[type=checkbox], form input[type=radio] {
+form input.account {
+  display: inline;
+  width: auto;
+}
+form input.terms {
   display: inline;
   width: auto;
 }

@@ -1,4 +1,4 @@
-<?php 
+<?php
 	# connect
 	require('db-config.php');
 	# use _once on function definitions to prevent duplicates
@@ -7,10 +7,12 @@
 	include('header.php');
  ?>
 
-
+ <?php
+ # get the aside
+ include('sidebar.php'); ?>
 
 <main>
-	<?php 
+	<?php
 		# Get all published posts - newest first
 		$query = "SELECT posts.title, posts.date, posts.body, categories.name, users.username, posts.post_id
 					FROM posts, categories, users
@@ -37,16 +39,16 @@
 		</h2>
 		<div class="post-info">
 		Written by <?php echo $row['username']; ?>
-		On <?php echo convertTimestamp ($row['date']); ?> 
+		On <?php echo convertTimestamp ($row['date']); ?>
 		in <?php echo $row['name'] ?></div>
 
 		<p><?php echo $row['body']; ?></p>
 	</article>
 
-	
-		<?php 
+
+		<?php
 		} # end while there are posts
-		} # end if there are posts 
+		} # end if there are posts
 		else{
 			echo "Sorry, no posts to show.";
 		}
@@ -56,11 +58,6 @@
 
 </main>
 
-
-<?php 
-# get the aside
-include('sidebar.php'); ?>
-
-<?php 
+<?php
 # get the footer and close the open body and html tags
 include('footer.php'); ?>

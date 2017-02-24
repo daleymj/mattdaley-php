@@ -1,0 +1,127 @@
+Midterm Review
+
+PHP
+
+***Escape into php:
+<?php...?>
+
+***PHP comments:
+#, //, /* */
+
+***Variables:
+Cannot start with a number, No Spaces, Case Sensative.  Have to start with $
+$name = value;
+
+***Data types:
+String: ' '
+Boolean: True or False
+Integer: 123
+Float/double: 2.63, 100.5
+Array: []
+
+***Quotes-single vs. double:
+echo '$test'; = literal
+echo "$test"; = parsed. Takes longer
+
+**Operators:
+Math: +, -, *, /
+Assignment: =
+Increment: ++, --, +=, -=
+Comparison: ==, <, >, <=, >=, ===, !=, <>
+Logical: AND, OR, $$, !!, XOR, 
+
+***If/elseif/else:
+if(condition) {
+   
+}elseif(other condition) {
+   
+}else{
+
+}
+
+***Switch:
+switch(expression) {
+   case 1:
+   //do stuff
+   break;
+   case 2:
+   //do stuff
+   break;
+   default:
+   //do stuff
+}
+
+***Functions:
+function myFunc() {
+   $score = 5000 + 500
+   echo $score; or return $score;
+}
+myFunc();
+No hyphens, special characters or spaces. Name must be unique.
+
+***Superglobal arrays, Form Methods, Cookies, Sessions:
+$_REQUEST($_GET, $_POST, $_COOKIE) $_SESSION
+$_GET: form method="get", Query String, !var=value, $_GET['var']
+$_POST: method="post", $_POST['phone']
+$_COOKIE: setcookie(), $_COOKIE['var']
+$_SESSION: session_start();, $_SESSION['name']=value;, session_destroy();
+cookies can be turned off and hacked. Session closes when the browser is closed or when it's destroyed.
+
+***Validation & Sanitization:
+Do not trust user submitted data
+sanitize every field
+filter_var
+
+***mail():
+Sends email
+
+***RSS(Really Simple Syndication):
+Syndicated feed of content
+Simple form of XML
+
+MySQL(Structured Query Language)
+
+***What is a DB?:
+DataBase > tables > rows(records) & columns(fields)
+primary & foreign(borrowed) keys
+
+***4 basic commands:
+SELECT:
+INSERT
+UPDATE
+DELETE
+
+***What is *(asterisk)?:
+Select all fields
+
+***What is PphMyAdmin?:
+Third party GUI(Graphical User Interface)
+
+Select all the fields:
+SELECT *
+FROM posts
+
+Just title and body:
+SELECT title, body
+FROM posts
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//

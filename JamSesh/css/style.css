@@ -1,0 +1,65 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+html {
+  background: beige;
+}
+body {
+  background: url("../images/guitar.gif") no-repeat;
+  background-size: cover;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+header h1 {
+  margin: 0 auto;
+}
+aside {
+  background color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+aside p {
+  color: #B23825;
+}
+footer small {
+  color: white;
+}
+footer ul {
+  position: absolute;
+}
+footer ul li {
+  display: inline-block;
+}
+footer ul li a img {
+  width: 50px;
+}
+
+/************************form controls*/
+form {
+  width: 50%;
+  color: white;
+}
+form input[type=checkbox], form input[type=radio] {
+  display: inline;
+  width: auto;
+}
+input, textarea, label {
+  display: block;
+  width: 100%;
+  margin: .2em 0;
+}
+input.submit {
+  margin-top: 1em;
+}
+
+/************Media Queries **********************************/
+@media only screen and (min-width: 287px) {
+header h1 a img {
+  width: 75%;
+}
+}
+@media only screen and (min-width: 500px) {
+  header h1 a img{
+    width: 40%;
+  }
+}

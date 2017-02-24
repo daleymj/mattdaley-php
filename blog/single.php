@@ -65,6 +65,10 @@
 	}//end of parser
  ?>
 
+ <?php
+ # get the aside
+ include('sidebar.php'); ?>
+
 <main>
 <?php # get all the info about the post we are trying to show (make sure it's published)
 $query = "SELECT posts.title, posts.body, users.username, posts.date
@@ -176,10 +180,6 @@ else{
 }
 ?>
 </main>
-
-<?php
-# get the aside
-include('sidebar.php'); ?>
 
 <?php
 # get the footer and close the open body and html tags

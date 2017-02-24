@@ -6,6 +6,12 @@ function convertTimestamp( $ugly ){
 	return $date->format( 'l, F jS, Y' );
 }
 
+// a function to convert ugly timestamps to human friendly dates
+function convertTimeRSS($ugly){
+	$date = new DateTime($ugly);
+	return $date->format('r');
+}
+
 //clean any input string
 function clean_string($untrusted) {
 	global $db;
@@ -26,5 +32,6 @@ function clean_url($untrusted) {
 	global $db;
 	return mysqli_real_escape_string($db, filter_var($untrusted, FILTER_SANITIZE_URL));
 }
+
 
 # no close PHP here

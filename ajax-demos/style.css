@@ -1,0 +1,55 @@
+body {
+  height: 800px;
+  /*background: linear-gradient(chocolate, slategray);*/
+  background: radial-gradient(chocolate, slategray);
+  color: azure;
+  font-family: verdana;
+}
+#display-area {
+  background-color: black;
+  color: chocolate;
+  padding: 1em;
+  margin: 1em 0;
+}
+#display-area h2 {
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.3em;
+}
+article {
+  margin: 1em 0;
+  border-top: solid 1px white;
+}
+article h4 {
+  color: sandybrown;
+}
+article p {
+  color: navajowhite;
+}
+.loading {
+  background-color: rgba(0, 0, 0, .3);
+}
+.loading:before {
+  content: 'Loading...';
+}
+/*for the tabs interface*/
+.tabs {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.tab {
+  display: inline-block;
+  background-color: chocolate;
+  color: black;
+  cursor: pointer;
+  padding: .5em;
+  border-radius: .5em;
+  margin: .1em;
+}
+.current {
+  background-color: slategray;
+  color: white;
+  border-radius: .5em .5em 0 .5em;
+  border: 2px solid chocolate;
+}

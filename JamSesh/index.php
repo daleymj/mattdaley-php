@@ -13,38 +13,48 @@
     </header>
 
     <aside class="callout">
-      <h2>Stuff</h2>
-      <p>Stuff</p>
-      <p>Stuff</p>
+      <h2><img src="images/rolling.png" alt="rolling stone"></a></h2>
+      <p>More than 1.5 Million Users!!!</p>
+      <p>“#1 Social Media Site for Musicians!”</p>
+      <p>-Kerrang Magazine!-</p>
     </aside>
 
     <main>
       <form action="" method="post" novalidate>
 
       <label for="the_name">Name:</label>
-      <input type="text" name="name" id="the_name" value="">
+      <input type="text" name="name" id="the_name">
 
       <label for="the_email">Email:</label>
-      <input type="email" name="email" id="the_email" value="">
+      <input type="email" name="email" id="the_email">
 
-      <label for="the_phone">Phone Number</label>
-      <input type="tel" name="phone" id="the_phone" value="">
+      <label for="the_phone">Password:</label>
+      <input type="text" name="password" id="the_password">
 
-      <label>
-        Musician
-        <input type="checkbox" name="Musician" value="true" class="account">
-        Band
-        <input type="checkbox" name="Band" value="true" class="account">
-        Fan
-        <input type="checkbox" name="Fan" value="true" class="account">
-      </label>
+      <label for="the_phone">Zip Code:</label>
+      <input type="text" name="zip code" id="the_zip">
+
+      <fieldset>
+        <label class="account">
+          Musician
+          <input type="checkbox" name="Musician" value="true">
+        </label>
+        <label class="account">
+          Band
+          <input type="checkbox" name="Band" value="true" class="account">
+        </label>
+        <label class="account">
+          Fan
+          <input type="checkbox" name="Fan" value="true" class="account">
+        </label>
+      </fieldset>
 
       <label>
         <input type="checkbox" name="terms" value="true" class="terms">
         I agree to the Terms of Service and the Privacy Policy.
       </label>
 
-      <input type="submit" value="Sign Up">
+      <input type="submit" value="Sign Up" class="submit">
       <input type="hidden" name="did_send" value="true">
 
       </form>

@@ -74,19 +74,7 @@ if ( $_POST['did_register'] ) {
 </head>
 <body class="login">
   <h1>Create an Account</h1>
-  <?php if ( isset($feedback) ) {
-    echo '<div class="feedback">';
-    echo $feedback;
-    //if there are errors, show them as a lists
-    if ( ! empty($errors) ) {
-      echo '<ul>';
-      foreach ( $errors as $error ) {
-        echo '<li>' . $error . '</li>';
-      }
-      echo '</ul>';
-    }
-    echo '</div>';
-  } ?>
+  <?php show_feedback($feedback, $errors); ?>
   <form class="form-account" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
     <label for="the_username">Choose a Username</label>
     <input type="text" id="the_username" name="username">

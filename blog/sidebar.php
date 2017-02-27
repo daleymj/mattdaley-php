@@ -17,13 +17,11 @@
     <?php
     //get the latests 5 published posts and their comment count
     //TODO: make this show the posts that have 0 comments
-    $query = "SELECT posts.title, COUNT(*) AS total, posts.post_id
-    FROM posts, comments
-    WHERE posts.post_id = comments.post_id
-    AND posts.is_published = 1
-    GROUP BY comments.post_id
-    ORDER BY posts.date DESC
-    LIMIT 5";
+    $query = "SELECT posts.title, posts.post_id
+              FROM posts
+              WHERE posts.is_published = 1
+              ORDER BY posts.date DESC
+              LIMIT 5";
     //run it
     $result = $db->query($query);
     //check it
@@ -34,7 +32,10 @@
         //loop it
         while( $row = $result->fetch_assoc() ){
           ?>
-          <li><a href="single.php?post_id=<?php echo $row['post_id'] ?>"><?php echo $row['title']; ?></a> - (<?php echo $row['total']; ?>)</li>
+          <li><a href="single.php?post_id=<?php echo $row['post_id'] ?>"><?php echo $row['title']; ?>
+          </a>
+          - <?php count_comments($row['post_id']); ?>
+          </li>
           <?php
         }//end while
         //free it
@@ -51,12 +52,12 @@
       <h2>Categories</h2>
       <?php
       //get all category names in alphabetical order
-      $query = "SELECT c.name, COUNT(*) AS total
-      FROM categories AS c, posts
-      WHERE c.category_id = posts.category_id
-      GROUP BY posts.category_id
-      ORDER BY c.name ASC
-      LIMIT 5";
+      $query = "SELECT name, category_id
+                FROM categories
+                WHERE category_id = category_id
+                GROUP BY category_id
+                ORDER BY name ASC
+                LIMIT 5";
       //run it
       $result = $db->query($query);
       //check it
@@ -67,7 +68,9 @@
           //loop it
           while( $row = $result->fetch_assoc() ){
             ?>
-            <li><?php echo $row['name']; ?> (<?php echo $row['total']; ?>)</li>
+            <li><?php echo $row['name']; ?>
+            (<?php count_posts($row['category_id']); ?>)
+            </li>
             <?php
           }//end while
           //free it

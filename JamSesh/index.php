@@ -7,9 +7,13 @@
   	<!-- <link rel="alternate" type="application/rss+xml" href="rss.php"> -->
   </head>
 
-  <body>
+  <body id="home">
     <header>
       <h1><a href="index.php"><img src="images/logo.png" alt="logo"></a></h1>
+      <ul>>>
+        <li><a href="#">Log In</a></li>
+        <li><a href="about.php">About Us</a></li>
+      </ul>
     </header>
 
     <aside class="callout">
@@ -34,24 +38,26 @@
       <label for="the_phone">Zip Code:</label>
       <input type="text" name="zip code" id="the_zip">
 
+      <p>What type of account would you like?</p>
+
       <fieldset>
         <label class="account">
-          Musician
+          Musician <br>
           <input type="checkbox" name="Musician" value="true">
         </label>
         <label class="account">
-          Band
+          Band <br>
           <input type="checkbox" name="Band" value="true" class="account">
         </label>
         <label class="account">
-          Fan
+          Fan <br>
           <input type="checkbox" name="Fan" value="true" class="account">
         </label>
       </fieldset>
 
-      <label>
+      <label class="terms">
         <input type="checkbox" name="terms" value="true" class="terms">
-        I agree to the Terms of Service and the Privacy Policy.
+        <a href="#">I agree to the Terms of Service and the Privacy Policy.</a>
       </label>
 
       <input type="submit" value="Sign Up" class="submit">

@@ -118,7 +118,7 @@ function count_comments($post_id) {
 function count_posts($category_id) {
 	global $db;
 	$query = "SELECT COUNT(*) as total
-						FROM categories
+						FROM posts
 						WHERE category_id = $category_id";
 	$result = $db->query($query);
 	if($result->num_rows == 1) {

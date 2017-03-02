@@ -15,16 +15,35 @@ body {
   background: url("../images/guitar.gif") no-repeat;
   background-size: cover;
 }
+#login {
+  background: url("../images/login.gif") no-repeat;
+  background-size: cover;
+  background-position: bottom right;
+}
 #about {
   background: url("../images/about.gif") no-repeat;
   background-size: cover;
 }
+header {
+  height: 5em;
+}
 header h1 {
+  float: left;
   margin: 0 auto;
 }
 header ul {
   float: right;
-  top: -10px;
+}
+header ul li {
+  list-style-type: none;
+  float: left;
+}
+header ul li a {
+  color: goldenrod;
+  text-decoration: none;
+}
+#login h1 {
+  color: white;
 }
 aside {
   width: 30%;
@@ -38,7 +57,7 @@ aside p {
   color: #B23825;
 }
 footer {
-  display: inline;
+  height: 5em;
   background-color: black;
 }
 footer small {
@@ -46,13 +65,19 @@ footer small {
   color: white;
 }
 footer ul {
+  width: 30%;
   float: right;
+  padding: 0;
+  margin: 0;
 }
 footer ul li {
-  display: inline-block;
+  list-style-type: none;
+  width: 12%;
+  border: 1px solid white;
+  float: left;
 }
 footer ul li a img {
-  width: 50px;
+  width: 100%;
 }
 
 /************************form controls*/
@@ -98,6 +123,9 @@ input.submit {
   border: 2px solid #B23825;
   border-radius: 10px;
   text-align: center;
+}
+div.feedback {
+  color: white;
 }
 
 /************Media Queries **********************************/

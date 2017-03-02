@@ -71,7 +71,7 @@
 
 <main>
 <?php # get all the info about the post we are trying to show (make sure it's published)
-$query = "SELECT posts.title, posts.body, users.username, posts.date
+$query = "SELECT posts.title, posts.body, users.username, posts.date, users.user_id
 			FROM posts, users
 			WHERE posts.user_id = users.user_id
 			AND posts.is_published = 1
@@ -93,6 +93,7 @@ $query = "SELECT posts.title, posts.body, users.username, posts.date
 		<p><?php echo $row['body']; ?></p>
 
 		<div class="post-info">
+			<?php show_userpic($row['user_id'], 'small'); ?> <br>
 			By <?php echo $row['username']; ?>
 			on <?php echo convertTimestamp($row['date']); ?>
 		</div>

@@ -46,7 +46,7 @@ function clean_boolean($untrusted) {
  *@param array $errors. 		A list of any inline errors
  *@return string 						Displays a div containing all the feedback and errors
  */
-function show_feedback($feedback, $errors) {
+function show_feedback($feedback, $errors = array()) {
 	if ( isset($feedback) ) {
     echo '<div class="feedback">';
     echo $feedback;
@@ -152,6 +152,31 @@ function count_posts_by_user($user_id, $is_published = 1) {
 		$row = $result->fetch_assoc();
 		echo $row['total'];
 	} //end if
+}
+
+/**
+ * Display on <img /> for any user's pic at any known size
+ *@param int $user_id Any valid user_id
+ *@param int $size - count public Posts(default)
+ *														 0 means FALSE - count drafts
+ *@return int the number of posts
+ */
+function show_userpic($user_id, $size) {
+	global $db;
+	$query = "SELECT userpic, username
+						FROM users
+						WHERE user_id = $user_id
+						LIMIT 1";
+	$result = $db->query($query);
+	if ($result->num_rows == 1) {
+		//display the image if it exists, otherwise show the default userpic
+		$row = $result->fetch_assoc();
+		if ($row['userpic'] != '') {
+			echo '<img src="' . ROOT_URL . 'uploads/' . $row['userpic'] . '_' . $size . '.jpg" class="userpic" alt="' . $row['username'] . '\'s user pic">';
+		}else {
+			echo '<img src="' . ROOT_URL . 'images/default_' . $size . '.jpg" class="userpic" alt="default userpic">';
+		}
+	}
 }
 
 

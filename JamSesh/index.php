@@ -1,20 +1,14 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Jam Sesh</title>
-  	<link rel="stylesheet" type="text/css" href="css/style.css">
-  	<!-- <link rel="alternate" type="application/rss+xml" href="rss.php"> -->
-  </head>
+<?php
+	# connect
+	require('db-config.php');
+	# use _once on function definitions to prevent duplicates
+	include_once('functions.php');
+  include('register-parser.php');
+  $page = 'home';
+	# get the doctype and header area
+	include('header.php');
+ ?>
 
-  <body id="home">
-    <header>
-      <h1><a href="index.php"><img src="images/logo.png" alt="logo"></a></h1>
-      <ul>>>
-        <li><a href="#">Log In</a></li>
-        <li><a href="about.php">About Us</a></li>
-      </ul>
-    </header>
 
     <aside class="callout">
       <h2><img src="images/rolling.png" alt="rolling stone"></a></h2>
@@ -24,7 +18,8 @@
     </aside>
 
     <main>
-      <form action="" method="post" novalidate>
+      <?php show_feedback($feedback, $errors ) ?>
+      <form action="index.php" method="post" novalidate>
 
       <label for="the_name">Name:</label>
       <input type="text" name="name" id="the_name">
@@ -32,36 +27,36 @@
       <label for="the_email">Email:</label>
       <input type="email" name="email" id="the_email">
 
-      <label for="the_phone">Password:</label>
-      <input type="text" name="password" id="the_password">
+      <label for="the_password">Password:</label>
+      <input type="password" name="password" id="the_password">
 
-      <label for="the_phone">Zip Code:</label>
-      <input type="text" name="zip code" id="the_zip">
+      <label for="the_zip">Zip Code:</label>
+      <input type="text" name="zip_code" id="the_zip">
 
       <p>What type of account would you like?</p>
 
       <fieldset>
         <label class="account">
           Musician <br>
-          <input type="checkbox" name="Musician" value="true">
+          <input type="radio" name="account_type" value="1">
         </label>
         <label class="account">
           Band <br>
-          <input type="checkbox" name="Band" value="true" class="account">
+          <input type="radio" name="account_type" value="2" class="account">
         </label>
         <label class="account">
           Fan <br>
-          <input type="checkbox" name="Fan" value="true" class="account">
+          <input type="radio" name="account_type" value="3" class="account">
         </label>
       </fieldset>
 
       <label class="terms">
-        <input type="checkbox" name="terms" value="true" class="terms">
+        <input type="checkbox" name="policy" value="1">
         <a href="#">I agree to the Terms of Service and the Privacy Policy.</a>
       </label>
 
       <input type="submit" value="Sign Up" class="submit">
-      <input type="hidden" name="did_send" value="true">
+      <input type="hidden" name="did_register" value="true">
 
       </form>
     </main>

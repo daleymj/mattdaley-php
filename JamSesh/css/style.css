@@ -56,6 +56,12 @@ aside h2 img{
 aside p {
   color: #B23825;
 }
+main h1 {
+  color: white;
+}
+main p {
+  color: white;
+}
 footer {
   height: 5em;
   background-color: black;

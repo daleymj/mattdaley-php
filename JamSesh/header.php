@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Jam Sesh</title>
   	<link rel="stylesheet" type="text/css" href="css/style.css">
-  	<!-- <link rel="alternate" type="application/rss+xml" href="rss.php"> -->
+  	<link rel="alternate" type="application/rss+xml" href="rss.php">
   </head>
 
   <body id="<?php echo $page; ?>">
@@ -14,7 +14,7 @@
         <?php if ($page != 'home') { ?>
           <li><a href="index.php">Home</a></li>
         <?php } ?>
-        <?php if ($page != 'login') { ?>  
+        <?php if ($page != 'login') { ?>
           <li><a href="login.php">Log In</a></li>
         <?php } ?>
         <?php if ($page != 'about') { ?>

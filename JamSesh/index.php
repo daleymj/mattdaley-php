@@ -52,7 +52,7 @@
 
       <label class="terms">
         <input type="checkbox" name="policy" value="1">
-        <a href="#">I agree to the Terms of Service and the Privacy Policy.</a>
+        <a href="policy.php">I agree to the Terms of Service and the Privacy Policy.</a>
       </label>
 
       <input type="submit" value="Sign Up" class="submit">

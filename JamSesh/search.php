@@ -7,7 +7,7 @@ include_once('header.php');
 //extract and sanitize the keywords that the user is searching footer
 $keywords = clean_string( $_GET['keywords'] );
 //pagination configuration
-$per_page = 1;
+$per_page = 10;
 //start on page 1
 $current_page = 1;
 ?>
@@ -16,8 +16,7 @@ $current_page = 1;
   //get all the published posts that contain the keywords in their title or body
   $query = "SELECT DISTINCT *
   FROM posts
-  WHERE is_published = 1
-  AND ( title LIKE '%$keywords%' OR body LIKE '%$keywords%' )";
+  WHERE ( title LIKE '%$keywords%' OR body LIKE '%$keywords%' )";
   //run the query, catch the returned info in a result object
   $result = $db->query($query);
   //how many posts were found?
@@ -39,7 +38,7 @@ $current_page = 1;
       echo "<h3>Showing page $current_page of $total_pages</h3>";
 
       //modify the original query to get the right subset of Results
-      $offset = $current_page - 1 * $per_page;
+      $offset = ($current_page - 1) * $per_page;
       $query = $query . " LIMIT $offset, $per_page";
 
       //run the modified query
@@ -84,10 +83,6 @@ $current_page = 1;
     <a href="blog.php">Read All Posts</a>
   </main>
   <?php
-  //get the aside element
-  include_once('sidebar.php');
-  ?>
-  <?php
-  //get the footer element and close the open body and html tags
-  include_once('footer.php');
+  # get the footer and close the open body and html tags
+  include('footer.php');
   ?>

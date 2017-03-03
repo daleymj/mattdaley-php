@@ -11,15 +11,23 @@
 
 
     <aside class="callout">
-      <h2><img src="images/rolling.png" alt="rolling stone"></a></h2>
+      <div class="rolling">
+      	<img src="images/rolling.png" alt="rolling stone">
+			</div>
       <p>More than 1.5 Million Users!!!</p>
       <p>“#1 Social Media Site for Musicians!”</p>
       <p>-Kerrang Magazine!-</p>
     </aside>
 
+		<form class="search" action="search.php" method="get">
+			<label for="the_keywords">Search:</label>
+			<input type="search" name="keywords" id="the_keywords">
+			<input type="submit" value="Go" class="search-button">
+		</form>
+
     <main>
       <?php show_feedback($feedback, $errors ) ?>
-      <form action="index.php" method="post" novalidate>
+      <form class="register"action="index.php" method="post" novalidate>
 
       <label for="the_name">Name:</label>
       <input type="text" name="name" id="the_name">
@@ -52,7 +60,7 @@
 
       <label class="terms">
         <input type="checkbox" name="policy" value="1">
-        <a href="policy.php">I agree to the Terms of Service and the Privacy Policy.</a>
+        <a href="policy.php"><small>I agree to the Terms of Service and the Privacy Policy.</small></a>
       </label>
 
       <input type="submit" value="Sign Up" class="submit">
@@ -61,14 +69,7 @@
       </form>
     </main>
 
-    <footer>
-      <small>&copy 2017 Matt Daley</small>
-      <ul>
-        <li><a href="#"><img src="images/face.png" alt="facebook"></a></li>
-        <li><a href="#"><img src="images/twit.png" alt="twitter"></a></li>
-        <li><a href="#"><img src="images/insta.png" alt="instagram"></a></li>
-        <li><a href="#"><img src="images/rss.png" alt="rss"></a></li>
-      </ul>
-    </footer>
-  </body>
-</html>
+		<?php
+		# get the footer and close the open body and html tags
+		include('footer.php');
+		?>

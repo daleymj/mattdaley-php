@@ -13,7 +13,6 @@ $keywords = clean_string( $_GET['keywords'] );
   //get all the published posts that contain the keywords in their title or body
   $query = "SELECT DISTINCT *
   FROM posts
-  WHERE is_published = 1
   AND ( title LIKE '%$keywords%' OR body LIKE '%$keywords%' )";
   //run the query, catch the returned info in a result object
   $result = $db->query($query);

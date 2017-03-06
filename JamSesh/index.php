@@ -15,19 +15,18 @@
       	<img src="images/rolling.png" alt="rolling stone">
 			</div>
       <p>More than 1.5 Million Users!!!</p>
-      <p>“#1 Social Media Site for Musicians!”</p>
-      <p>-Kerrang Magazine!-</p>
+      <p>“#1 Social Media Site for Musicians!”<br>-Kerrang Magazine!-</p>
     </aside>
 
 		<form class="search" action="search.php" method="get">
 			<label for="the_keywords">Search:</label>
 			<input type="search" name="keywords" id="the_keywords">
-			<input type="submit" value="Go" class="search-button">
+			<input class="search" type="submit" value="Go" class="search-button">
 		</form>
 
     <main>
       <?php show_feedback($feedback, $errors ) ?>
-      <form class="register"action="index.php" method="post" novalidate>
+      <form class="register" action="index.php" method="post" novalidate>
 
       <label for="the_name">Name:</label>
       <input type="text" name="name" id="the_name">

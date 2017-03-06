@@ -27,7 +27,7 @@ include('header.php');
       <label for="the_password">Password</label>
       <input type="password" name="password" id="the_password">
 
-      <input type="submit" value="Log In">
+      <input class="submit" type="submit" value="Log In">
 
       <input type="hidden" name="did_login" value="true">
 

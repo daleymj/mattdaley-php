@@ -21,3 +21,5 @@ define('ROOT_PATH', 'C:\xampp\htdocs\mattdaley-php\blog');
 error_reporting(E_ALL & ~E_NOTICE);
 
 ini_set ('gd.jpeg_ignore_warning', 1);
+
+session_start();

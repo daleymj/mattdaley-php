@@ -14,14 +14,17 @@
         <a href="index.php"><img src="images/logo.png" alt="logo"></a>
       </div>
       <ul>
-        <?php if ($page != 'home') { ?>
-          <li><a href="index.php">Home</a></li>
+        <?php if ($page != 'admin') { ?>
+          <li><a href="admin.php">Home</a></li>
         <?php } ?>
-        <?php if ($page != 'login') { ?>
+        <?php if ($page != 'login' AND empty($_SESSION['user_id'])) { ?>
           <li><a href="login.php">Log In</a></li>
         <?php } ?>
         <?php if ($page != 'about') { ?>
           <li><a href="about.php">About Us</a></li>
+        <?php } ?>
+        <?php if ($_SESSION['user_id']) { ?>
+          <li><a href="login.php?action=logout">Sign Out</a></li>
         <?php } ?>
 
       </ul>

@@ -2,6 +2,7 @@
 require('db-config.php');
 //use _once on function definitions to prevent duplicates
 include_once('functions.php');
+$page = 'search';
 //get the doctype and header element
 include_once('header.php');
 //extract and sanitize the keywords that the user is searching footer
@@ -80,7 +81,7 @@ $current_page = 1;
       echo 'Sorry, no posts to show.';
     }
     ?>
-    <a href="blog.php">Read All Posts</a>
+    <a href="admin.php">Read All Posts</a>
   </main>
   <?php
   # get the footer and close the open body and html tags

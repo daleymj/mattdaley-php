@@ -18,13 +18,9 @@
       <p>“#1 Social Media Site for Musicians!”<br>-Kerrang Magazine!-</p>
     </aside>
 
-		<form class="search" action="search.php" method="get">
-			<label for="the_keywords">Search:</label>
-			<input type="search" name="keywords" id="the_keywords">
-			<input class="search" type="submit" value="Go" class="search-button">
-		</form>
 
-    <main>
+
+    <main>			
       <?php show_feedback($feedback, $errors ) ?>
       <form class="register" action="index.php" method="post" novalidate>
 

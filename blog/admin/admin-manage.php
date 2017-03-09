@@ -1,11 +1,11 @@
-<?php 
-session_start();
-require('../db-config.php');
-include_once('../functions.php');
+<?php
+// session_start();
+require('db-config.php');
+include_once('functions.php');
 
 //header contains the security check, doctype, and <header> element
-include('admin-header.php');
-include('admin-nav.php');
+include('header.php');
+// include('admin-nav.php');
 
 //"delete" parser
 if($_POST['did_delete']){
@@ -20,26 +20,25 @@ if($_POST['did_delete']){
 ?>
 <main role="main">
  	<section class="panel important">
- 		<h2>Manage Posts:</h2>
- 		<?php 
- 		//get all the posts 
- 		$query = "SELECT posts.*, users.username, categories.name
- 					FROM posts, users, categories
- 					WHERE posts.user_id = users.user_id
- 					AND categories.category_id = posts.category_id";
+ 		<h1>Update Profile:</h1>
+ 		<?php
+ 		//get all the posts
+ 		$query = "SELECT posts.*, users.username
+ 					FROM posts, users
+ 					WHERE posts.user_id = users.user_id";
  		//if not an admin, only show the logged in user's posts
  		if( ! IS_ADMIN ){
  			$user_id = USER_ID;
  			$query .= " AND posts.user_id = $user_id";
- 		}	
+ 		}
  		// newest posts first
  		$query .= " ORDER BY posts.date DESC";
 
  		$result = $db->query($query);
  		if( $result->num_rows >= 1 ){
- 		?> 		
+ 		?>
  		<form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
- 		<table> 			
+ 		<table>
  			<tr>
  				<th>Title</th>
  				<th>Date</th>
@@ -48,7 +47,7 @@ if($_POST['did_delete']){
  				<th>Category</th>
  				<th><button type="submit"><i class="fa fa-trash fa-2x"></i></button></th>
  			</tr>
-			
+
 			<?php while( $row = $result->fetch_assoc() ){ ?>
  			<tr>
  				<td>
@@ -63,10 +62,10 @@ if($_POST['did_delete']){
  	<td><input type="checkbox" name="delete[]" value="<?php echo $row['post_id'] ?>"></td>
  			</tr>
  			<?php } //end while ?>
- 		
+
  		</table>
 
- 			
+
  			<input type="hidden" name="did_delete" value="1">
 
  		</form>
@@ -74,4 +73,4 @@ if($_POST['did_delete']){
  	</section>
 </main>
 
-<?php include('admin-footer.php'); ?>	
+<?php include('admin-footer.php'); ?>

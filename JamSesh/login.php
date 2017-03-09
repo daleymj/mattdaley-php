@@ -11,6 +11,7 @@ include('header.php');
     ?>
     </pre> -->
 
+    <main>
     <h1>Log In to Your Account</h1>
 
     <?php
@@ -32,6 +33,7 @@ include('header.php');
       <input type="hidden" name="did_login" value="true">
 
     </form>
+    </main>
 
   </body>
 </html>

@@ -48,7 +48,7 @@ if($_POST['did_login']) {
         die($db->error);
       }
       //send to secret page
-      header('location:index.php');
+      header('location:admin.php');
     }else {
       //show an Error
       $feedback = 'Your username or password is incorrect!!!';

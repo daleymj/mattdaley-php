@@ -25,6 +25,10 @@ body {
   background: url("../images/about.gif") no-repeat;
   background-size: cover;
 }
+#admin {
+  background: url("../images/admin.gif") no-repeat;
+  background-size: cover;
+}
 #login h1 {
   color: white;
 }
@@ -48,12 +52,20 @@ header a img {
   height: auto;
 }
 header ul {
-  float: right;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 259.09px;
+  margin: 0 auto;
+  min-height: 38px;
+  padding: 0;
+}
+#search header ul {
+  width: 330px;
 }
 header ul li {
   list-style-type: none;
   float: left;
-  margin: 0 .5em 1em 0;
+  padding: .5em .5em .5em .5em;
+  margin: 0;
 }
 header ul li a {
   color: goldenrod;
@@ -63,10 +75,18 @@ header ul li a {
 header ul li a:hover {
   color: white;
 }
+#admin h1 {
+  color: goldenrod;
+  text-align: center;
+  font-family: Royalacid;
+  font-size: 3em;
+  margin: 0;
+}
 aside {
   background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
   clear: both;
+  margin-top: 1em;
   padding: .5em;
 }
 aside div {
@@ -81,15 +101,32 @@ aside p {
   color: #B23825;
   text-align: center;
 }
+aside ul li {
+  list-style-type: none;
+}
+aside ul li a {
+  color: white;
+  text-decoration: none;
+}
 main {
   clear: both;
   width: 100%;
+}
+#search main {
+  margin: 0 auto;
 }
 main h1 {
   color: white;
 }
 main p {
   color: white;
+}
+main a {
+  color: white;
+  text-decoration: none;
+}
+main a:hover {
+  color: goldenrod;
 }
 /************************form controls*/
 form {
@@ -103,6 +140,7 @@ form.search {
 input.search {
   display: block;
   width: 30%;
+  max-width: 64.8px;
   background-color: goldenrod;
   margin: 0 auto;
   padding: .5em;
@@ -147,8 +185,9 @@ label.terms a:hover {
 input.submit {
   display: block;
   width: 30%;
+  max-width: 86.39px;
   background-color: goldenrod;
-  margin: 0 auto;
+  margin: .5em auto 0;
   padding: .5em;
   border: 2px solid #B23825;
   border-radius: 10px;
@@ -158,7 +197,7 @@ div.feedback {
   color: white;
 }
 footer {
-  /*background-color: black;*/
+  background-color: rgba(0, 0, 0, 0.5);
   /*height: 4em;*/
 }
 footer small {
@@ -170,6 +209,7 @@ footer small {
 }
 footer ul {
   width: 100%;
+  max-width: 400px;
   box-sizing: border-box;
   padding: 2em 0 0 0;
   margin: 0 auto;
@@ -180,6 +220,8 @@ footer ul li {
   width: 25%;
   padding: 0;
 }
+footer ul li a {
+}
 footer ul li a img {
   max-width: 74px;
   height: auto;
@@ -189,16 +231,51 @@ footer ul li a img {
 /************Media Queries **********************************/
 @media only screen and (min-width: 475px) {
   aside {
+    margin: 1em auto 0;
     max-width: 426px;
   }
   #home main,
-  #home form.search {
+  #login main,
+  #search main {
+    margin: 0 auto;
     max-width: 458px;
+  }
+  form.search {
+    max-width: 319.5px;
+  }
+  form label.terms {
+    padding-left: 1em;
   }
 }
 @media only screen and (min-width: 600px) {
   header a img {
     max-width: 551px;
+    height: auto;
+    margin: 0 auto;
+  }
+}
+@media only screen and (min-width: 857px) {
+  header {
+    position: relative;
+  }
+  header ul {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  aside,
+  main,
+  #home main,
+  #login main {
+    margin: 0;
+  }
+  footer ul {
+    width: 50%;
+    float: right;
+  }
+  footer small {
+    text-align: left;
+    margin-left: 13em;
   }
 }
 @media only screen and (min-width: 1000px) {
@@ -206,3 +283,7 @@ footer ul li a img {
     max-width: 1000px;
   }
 }
+
+/************************** FONTS *********************************/
+@font-face { font-family: Royalacid; src: url('../fonts/royalacid.ttf'); }
+@font-face { font-family: GRAFICA TYPE 3; src: url('../fonts/GRAFIKA TYPE 3.ttf');}
